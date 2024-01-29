@@ -1,0 +1,44 @@
+data_args:
+  data_dir: data
+  dataset: /home/tok/figurative-language/datasets/MetaphorRowsDataset.py
+  ignore_subtokens: false
+  max_number_of_tokens: 256
+  rows_per_example: 1
+  dataset_seed: 42
+  non_bin: true
+  dataset_type: pre_piyyut # pinchas, all
+
+model_args:
+  save_total_limit: 3
+  save_torch_model: False
+  do_eval: True
+  do_predict: True
+  do_test: True
+  do_train: true
+  ignore_subtokens: false
+  output_dir: output # output direcgit tory
+  report_train: True # Report train metrics
+  evaluation_strategy: "steps" # "no", "steps", "epoSch"
+  logging_strategy: "steps" # "no", "steps", "epoch"
+  save_steps: 10
+  eval_steps: 10
+  logging_steps: 1
+  save_strategy: "steps" # "no", "steps", "epoch"
+  save_model: True # Set to True to save the model
+  load_best_model_at_end: True
+
+
+paths:
+  main_dmain_dirir: /Documents/Master/Metaphor-detection-piyyut
+  results_checkpoints_dir: results/checkpoints
+  results_output_dir: results/checkpoints
+  plots_dir: plots
+  predictions_dir: data/results
+  data_dir: prepared_data
+  berel_path: /models/BEREL_PyTorch_Model
+  mlm_data_path: mlm_data
+
+wandb:
+  wandb_project: 'Metaphor-detection-piyyut'
+  key: 'Your wandb key' # optional
+  entity: 'Your wandb entity'
